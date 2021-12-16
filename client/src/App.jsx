@@ -2,8 +2,8 @@ import React from 'react';
 
 import './App.scss';
 
-function Application() {
-  return <div>Pet Shop</div>;
+function App() {
+  return <div className='app'>Pet Shop</div>;
 }
 
-export default Application;
+export default App;

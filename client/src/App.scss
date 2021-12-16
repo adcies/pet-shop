@@ -1,6 +1,12 @@
 @import './sass/reset';
+@import './sass/variables';
 
 :root {
-  font-size: 10px;
+  font-size: $font-size;
   font-family: aria, sans-serif;
+}
+
+.app {
+  max-width: $max-width;
+  margin: 0 auto;
 }
