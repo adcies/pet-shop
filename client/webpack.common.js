@@ -27,7 +27,15 @@ module.exports = {
           extensions: ['.js', '.jsx'],
         },
         options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
+          presets: [
+            '@babel/preset-env',
+            [
+              '@babel/preset-react',
+              {
+                runtime: 'automatic',
+              },
+            ],
+          ],
           plugins: ['@babel/plugin-transform-runtime'],
         },
       },
