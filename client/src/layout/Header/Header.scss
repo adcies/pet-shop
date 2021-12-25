@@ -1,0 +1,80 @@
+.header {
+  position: relative;
+  // height: 200px;
+  &__main-panel {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  &__nav-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    &-icon {
+      cursor: pointer;
+      flex-basis: 15px;
+      font-size: 15px;
+    }
+  }
+  &__search-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      flex-basis: 15px;
+      font-size: 15px;
+    }
+  }
+  &__panel-element {
+    flex-grow: 1;
+  }
+
+  .search {
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.2s;
+    &--active {
+      max-height: 50px;
+    }
+    &__input {
+      width: 50%;
+    }
+  }
+
+  &__login {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    &-btn {
+      flex-basis: 55px;
+    }
+  }
+  .nav {
+    transition: 0.2s;
+    max-height: 0;
+    overflow: hidden;
+    &--active {
+      max-height: 500px;
+    }
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+    &__element {
+      text-align: center;
+      &:hover {
+        background-color: gray;
+      }
+    }
+    &__link {
+      display: block;
+      padding: 15px 60px;
+      text-decoration: none;
+      font-size: 1.8rem;
+    }
+  }
+}
