@@ -49,27 +49,27 @@ function Header() {
           <ul className='nav__list'>
             <li className='nav__element'>
               <a className='nav__link' href='#'>
-                test1
+                Dog Food
               </a>
             </li>
             <li className='nav__element'>
               <a className='nav__link' href='#'>
-                test2
+                Cat Food
               </a>
             </li>
             <li className='nav__element'>
               <a className='nav__link' href='#'>
-                test3
+                Toys
               </a>
             </li>
             <li className='nav__element'>
               <a className='nav__link' href='#'>
-                test4
+                Other
               </a>
             </li>
             <li className='nav__element'>
               <a className='nav__link' href='#'>
-                test5
+                My Account
               </a>
             </li>
           </ul>

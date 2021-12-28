@@ -4,6 +4,8 @@
   top: 0;
   left: 0;
   width: 100%;
+  overflow: scroll;
+  max-height: 100vh;
   &__main-panel {
     display: flex;
     margin: 20px 0;
