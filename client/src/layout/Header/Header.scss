@@ -56,6 +56,12 @@
     justify-content: center;
     &-btn {
       flex-basis: 55px;
+      display: inline-block;
+      padding: 5px 10px;
+      &-container {
+        background-color: white;
+        border: 1px solid black;
+      }
     }
   }
   .nav {

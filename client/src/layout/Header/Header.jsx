@@ -2,6 +2,7 @@ import './Header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +39,11 @@ function Header() {
           </div>
 
           <div className='header__login header__panel-element'>
-            <button className='header__login-btn '>Log In</button>
+            <div className='header__login-btn-container'>
+              <Link className='header__login-btn' to='/auth'>
+                Log In
+              </Link>
+            </div>
           </div>
         </div>
         <div className={isSearchOpen ? 'search search--active' : 'search'}>
@@ -48,29 +53,29 @@ function Header() {
         <nav className={isMenuOpen ? 'nav nav--active' : 'nav'}>
           <ul className='nav__list'>
             <li className='nav__element'>
-              <a className='nav__link' href='#'>
+              <Link className='nav__link' to='/category/dogfood'>
                 Dog Food
-              </a>
+              </Link>
             </li>
             <li className='nav__element'>
-              <a className='nav__link' href='#'>
+              <Link className='nav__link' to='/category/catfood'>
                 Cat Food
-              </a>
+              </Link>
             </li>
             <li className='nav__element'>
-              <a className='nav__link' href='#'>
+              <Link className='nav__link' to='/category/toys'>
                 Toys
-              </a>
+              </Link>
             </li>
             <li className='nav__element'>
-              <a className='nav__link' href='#'>
+              <Link className='nav__link' to='/category/other'>
                 Other
-              </a>
+              </Link>
             </li>
             <li className='nav__element'>
-              <a className='nav__link' href='#'>
+              <Link className='nav__link' to='/auth'>
                 My Account
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
