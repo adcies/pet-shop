@@ -1,6 +1,9 @@
 .header {
-  position: relative;
-  // height: 200px;
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   &__main-panel {
     display: flex;
     margin: 20px 0;
@@ -22,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     &-icon {
       flex-basis: 15px;
       font-size: 15px;

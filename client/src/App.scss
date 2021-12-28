@@ -7,6 +7,8 @@
 }
 
 .app {
+  min-height: 100vh;
   max-width: $max-width;
-  margin: 0 auto;
+  padding: 60px 0;
+  margin: 0 auto; //header position fixed (make it better)
 }
