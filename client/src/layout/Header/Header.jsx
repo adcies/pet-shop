@@ -1,21 +1,40 @@
 import './Header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const handleCloseNavOrSearch = e => {
+    const isMenuToggleBtn =
+      e.target.parentElement.className === 'header__nav-toggle' ||
+      e.target.parentElement.parentElement.className === 'header__nav-toggle';
+
+    const isSearchToggleBtn =
+      e.target.parentElement.className === 'header__search-toggle' ||
+      e.target.parentElement.parentElement.className ===
+        'header__search-toggle';
+
+    if (!isMenuToggleBtn) setIsMenuOpen(false);
+    if (!isSearchToggleBtn) setIsSearchOpen(false);
+  };
+
+  useEffect(() => {
+    document.body.addEventListener('click', handleCloseNavOrSearch);
+    return () => {
+      document.body.removeEventListener('click', handleCloseNavOrSearch);
+    };
+  }, []);
+
   const handleMenuToggle = () => {
     setIsMenuOpen(prevValue => !prevValue);
-    setIsSearchOpen(false);
   };
 
   const handleSearchToggle = () => {
     setIsSearchOpen(prevValue => !prevValue);
-    setIsMenuOpen(false);
   };
 
   return (
