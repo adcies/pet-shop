@@ -18,8 +18,12 @@ function Header() {
       e.target.parentElement.parentElement.className ===
         'header__search-toggle';
 
+    const isSearchInput =
+      e.target.className === 'search search--active' ||
+      e.target.parentElement.className === 'search search--active';
+
     if (!isMenuToggleBtn) setIsMenuOpen(false);
-    if (!isSearchToggleBtn) setIsSearchOpen(false);
+    if (!isSearchToggleBtn && !isSearchInput) setIsSearchOpen(false);
   };
 
   useEffect(() => {
