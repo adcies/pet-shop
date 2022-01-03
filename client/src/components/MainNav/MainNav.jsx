@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import './MainNav.scss';
+
 const MainNav = ({ isMenuOpen }) => {
   return (
     <nav className={isMenuOpen ? 'nav nav--active' : 'nav'}>

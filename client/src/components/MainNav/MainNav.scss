@@ -1,0 +1,25 @@
+.nav {
+  transition: 0.2s;
+  max-height: 0;
+  overflow: hidden;
+  &--active {
+    max-height: 500px;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  &__element {
+    text-align: center;
+    &:hover {
+      background-color: gray;
+    }
+  }
+  &__link {
+    display: block;
+    padding: 15px 60px;
+    text-decoration: none;
+    font-size: 1.8rem;
+  }
+}
