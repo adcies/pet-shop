@@ -1,11 +1,14 @@
 @import '../../sass/mixins';
+@import '../../sass/variables';
 
 .header {
   background-color: #eee;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   width: 100%;
+  max-width: $max-width;
   overflow: auto;
   max-height: 100vh;
   &__logo {
