@@ -1,3 +1,5 @@
+@import '../../sass/mixins';
+
 .header {
   background-color: #eee;
   position: fixed;
@@ -6,6 +8,9 @@
   width: 100%;
   overflow: auto;
   max-height: 100vh;
+  &__logo {
+    text-align: center;
+  }
   &__main-panel {
     display: flex;
     margin: 20px 0;
@@ -39,11 +44,18 @@
 
   .search {
     max-height: 0;
+    display: none;
     overflow: hidden;
     text-align: center;
-    transition: 0.2s;
+    @include mq(tablet-large) {
+      max-height: 50px;
+      display: block;
+    }
     &--active {
       max-height: 50px;
+      width: 100%;
+      margin-top: 10px;
+      display: block;
     }
     &__input {
       width: 50%;
@@ -54,6 +66,9 @@
     display: flex;
     flex-grow: 1;
     justify-content: center;
+    @include mq(tablet-large) {
+      order: 1;
+    }
     &-btn {
       flex-basis: 55px;
       display: inline-block;

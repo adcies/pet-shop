@@ -4,11 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+
 import MainNav from '../../components/MainNav/MainNav';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const isMediumDevice = useMediaQuery({ query: '(min-width: 1024px)' });
 
   const handleCloseNavOrSearch = e => {
     const isMenuToggleBtn =
@@ -48,21 +52,24 @@ function Header() {
       <header className='header'>
         <div className='header__main-panel'>
           <div className='header__nav-toggle'>
-            <FontAwesomeIcon
-              onClick={handleMenuToggle}
-              className='header__nav-toggle-icon'
-              icon={isMenuOpen ? faTimes : faBars}
-            />
+            {!isMediumDevice && (
+              <FontAwesomeIcon
+                onClick={handleMenuToggle}
+                className='header__nav-toggle-icon'
+                icon={isMenuOpen ? faTimes : faBars}
+              />
+            )}
           </div>
           <div className='header__logo header__panel-element'>LOGO</div>
           <div className='header__search-toggle'>
-            <FontAwesomeIcon
-              onClick={handleSearchToggle}
-              className='header__search-toggle-icon'
-              icon={faSearch}
-            />
+            {!isMediumDevice && (
+              <FontAwesomeIcon
+                onClick={handleSearchToggle}
+                className='header__search-toggle-icon'
+                icon={faSearch}
+              />
+            )}
           </div>
-
           <div className='header__login header__panel-element'>
             <div className='header__login-btn-container'>
               <Link className='header__login-btn' to='/auth'>
@@ -70,12 +77,19 @@ function Header() {
               </Link>
             </div>
           </div>
+          <div
+            className={
+              isSearchOpen && !isMediumDevice
+                ? 'search search--active header__panel-element'
+                : 'search header__panel-element'
+            }
+          >
+            <input className='search__input' type='text' />
+            <button className='search__submit'>Search</button>
+          </div>
         </div>
-        <div className={isSearchOpen ? 'search search--active' : 'search'}>
-          <input className='search__input' type='text' />
-          <button className='search__submit'>Search</button>
-        </div>
-        <MainNav isMenuOpen={isMenuOpen} />
+
+        <MainNav isMenuOpen={isMenuOpen && !isMediumDevice} />
       </header>
     </>
   );
