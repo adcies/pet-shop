@@ -1,7 +1,7 @@
 import './Header.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faHome } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
@@ -43,10 +43,6 @@ function Header() {
     setIsMenuOpen(prevValue => !prevValue);
   };
 
-  const handleSearchToggle = () => {
-    setIsSearchOpen(prevValue => !prevValue);
-  };
-
   return (
     <>
       <header className='header'>
@@ -61,31 +57,16 @@ function Header() {
             )}
           </div>
           <div className='header__logo header__panel-element'>LOGO</div>
-          <div className='header__search-toggle'>
-            {!isMediumDevice && (
-              <FontAwesomeIcon
-                onClick={handleSearchToggle}
-                className='header__search-toggle-icon'
-                icon={faSearch}
-              />
-            )}
-          </div>
+          <Link className='header__home-btn' to='/'>
+            <FontAwesomeIcon className='header__home-btn' icon={faHome} />
+          </Link>
+
           <div className='header__login header__panel-element'>
             <div className='header__login-btn-container'>
               <Link className='header__login-btn' to='/auth'>
                 Log In
               </Link>
             </div>
-          </div>
-          <div
-            className={
-              isSearchOpen && !isMediumDevice
-                ? 'search search--active header__panel-element'
-                : 'search header__panel-element'
-            }
-          >
-            <input className='search__input' type='text' />
-            <button className='search__submit'>Search</button>
           </div>
         </div>
 

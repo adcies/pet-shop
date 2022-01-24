@@ -20,6 +20,15 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+  &__home-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+    flex-basis: 15px;
+    font-size: 20px;
+  }
   &__nav-toggle {
     display: flex;
     justify-content: center;
@@ -31,38 +40,8 @@
       font-size: 15px;
     }
   }
-  &__search-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &-icon {
-      flex-basis: 15px;
-      font-size: 15px;
-    }
-  }
   &__panel-element {
     flex-grow: 1;
-  }
-
-  .search {
-    max-height: 0;
-    display: none;
-    overflow: hidden;
-    text-align: center;
-    @include mq(tablet-large) {
-      max-height: 50px;
-      display: block;
-    }
-    &--active {
-      max-height: 50px;
-      width: 100%;
-      margin-top: 10px;
-      display: block;
-    }
-    &__input {
-      width: 50%;
-    }
   }
 
   &__login {
