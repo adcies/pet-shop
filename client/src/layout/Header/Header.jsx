@@ -10,32 +10,20 @@ import MainNav from '../../components/MainNav/MainNav';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const isMediumDevice = useMediaQuery({ query: '(min-width: 1024px)' });
 
-  const handleCloseNavOrSearch = e => {
+  const handleCloseNav = e => {
     const isMenuToggleBtn =
       e.target.parentElement.className === 'header__nav-toggle' ||
       e.target.parentElement.parentElement.className === 'header__nav-toggle';
-
-    const isSearchToggleBtn =
-      e.target.parentElement.className === 'header__search-toggle' ||
-      e.target.parentElement.parentElement.className ===
-        'header__search-toggle';
-
-    const isSearchInput =
-      e.target.className === 'search search--active' ||
-      e.target.parentElement.className === 'search search--active';
-
     if (!isMenuToggleBtn) setIsMenuOpen(false);
-    if (!isSearchToggleBtn && !isSearchInput) setIsSearchOpen(false);
   };
 
   useEffect(() => {
-    document.body.addEventListener('click', handleCloseNavOrSearch);
+    document.body.addEventListener('click', handleCloseNav);
     return () => {
-      document.body.removeEventListener('click', handleCloseNavOrSearch);
+      document.body.removeEventListener('click', handleCloseNav);
     };
   }, []);
 
