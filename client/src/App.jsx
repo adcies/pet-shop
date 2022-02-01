@@ -1,3 +1,7 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getItems } from './actions/itemActions';
+
 import Header from './layout/Header/Header';
 import LoginPage from './pages/LoginPage/LoginPage';
 import DogFoodPage from './pages/DogFoodPage/DogFoodPage';
@@ -11,6 +15,12 @@ import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getItems());
+  }, []);
+
   return (
     <div className='app'>
       <Header />
