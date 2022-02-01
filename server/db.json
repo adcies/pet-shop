@@ -1,3 +1,36 @@
 {
-  "items": []
+  "items": [
+    {
+      "name": "Dog Food",
+      "category": "dog-food",
+      "description": "Salmon flavor - 5kg",
+      "price": "90",
+      "img": "https://cdn.pixabay.com/photo/2016/03/05/19/02/salmon-1238248_960_720.jpg",
+      "id": 1
+    },
+    {
+      "name": "Cat Food",
+      "category": "cat-food",
+      "description": "Venison flavor - 5kg",
+      "price": "85",
+      "img": "https://cdn.pixabay.com/photo/2021/09/08/19/51/game-meat-6607794_960_720.jpg",
+      "id": 2
+    },
+    {
+      "name": "Frisbee",
+      "category": "toys",
+      "description": "Frisbee for dogs - blue color",
+      "price": "45",
+      "img": "https://cdn.pixabay.com/photo/2017/02/03/17/43/dachshund-2035700_960_720.jpg",
+      "id": 3
+    },
+    {
+      "name": "Dog collar",
+      "category": "other",
+      "description": "Dog collar - orange color, size: XL",
+      "price": "50",
+      "img": "https://cdn.pixabay.com/photo/2015/10/18/16/40/taxation-994707_960_720.jpg",
+      "id": 4
+    }
+  ]
 }
