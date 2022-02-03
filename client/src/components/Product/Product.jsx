@@ -1,11 +1,18 @@
+import './Product.scss';
+
 const Product = ({ product }) => {
   const { name, description, price, img } = product;
+
+  const imageStyle = {
+    backgroundImage: `url(${img})`,
+  };
+
   return (
     <div className='product'>
       <p className='product__name'>{name}</p>
       <p className='product__description'>{description}</p>
       <p className='product__price'>{price}</p>
-      <img className='product__img' src={img} alt={name} />
+      <div style={imageStyle} className='product__img'></div>
     </div>
   );
 };
