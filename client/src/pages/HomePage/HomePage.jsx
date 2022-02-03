@@ -1,19 +1,13 @@
 import './HomePage.scss';
 import { useSelector } from 'react-redux';
+import Products from '../../components/Products/Products';
 
-const HomePage = () => {
-  const { items, loading } = useSelector(state => state.item);
-  const elements = items.map(item => {
-    return (
-      <div key={item.id}>
-        <p>{item.name}</p>
-        <p>{item.description}</p>
-        <p>{item.price}</p>
-      </div>
-    );
-  });
-
-  return <div className='homepage'>{elements}</div>;
+const HomePage = ({ items }) => {
+  return (
+    <section className='homepage'>
+      <Products products={items} />
+    </section>
+  );
 };
 
 export default HomePage;
