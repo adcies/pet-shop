@@ -16,8 +16,8 @@ import './App.scss';
 
 function App() {
   const dispatch = useDispatch();
-  const { items } = useSelector(state => state.item);
-
+  const { items, loading } = useSelector(state => state.item);
+  console.log();
   useEffect(() => {
     dispatch(getItems());
   }, []);
@@ -27,18 +27,27 @@ function App() {
       <Header />
       <main className='main'>
         <Routes>
-          <Route path='/' element={<HomePage items={items} />} />
+          <Route
+            path='/'
+            element={<HomePage items={items} isLoading={loading} />}
+          />
           <Route path='/auth' element={<LoginPage />} />
           <Route
             path='/category/dogfood'
-            element={<DogFoodPage items={items} />}
+            element={<DogFoodPage items={items} isLoading={loading} />}
           />
           <Route
             path='/category/catfood'
-            element={<CatFoodPage items={items} />}
+            element={<CatFoodPage items={items} isLoading={loading} />}
           />
-          <Route path='/category/toys' element={<ToysPage items={items} />} />
-          <Route path='/category/other' element={<OtherPage items={items} />} />
+          <Route
+            path='/category/toys'
+            element={<ToysPage items={items} isLoading={loading} />}
+          />
+          <Route
+            path='/category/other'
+            element={<OtherPage items={items} isLoading={loading} />}
+          />
         </Routes>
       </main>
     </div>

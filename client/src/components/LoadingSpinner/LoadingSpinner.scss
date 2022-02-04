@@ -1,0 +1,13 @@
+@import '../../sass/animations';
+
+.spinner {
+  &__circle {
+    margin: 100px auto 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 15px solid lightcoral;
+    border-left-color: red;
+    animation: spinner 0.6s infinite linear;
+  }
+}
