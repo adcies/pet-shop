@@ -31,6 +31,38 @@
       "price": "50",
       "img": "https://cdn.pixabay.com/photo/2015/10/18/16/40/taxation-994707_960_720.jpg",
       "id": 4
+    },
+    {
+      "name": "Dog Food",
+      "category": "dog-food",
+      "description": "Beef flavor - 5kg",
+      "price": "85",
+      "img": "https://cdn.pixabay.com/photo/2016/03/05/23/02/barbecue-1239434_960_720.jpg",
+      "id": 5
+    },
+    {
+      "name": "Cat Food",
+      "category": "cat-food",
+      "description": "Chicken flavor - 5kg",
+      "price": "80",
+      "img": "https://cdn.pixabay.com/photo/2016/11/29/05/32/rooster-1867562_960_720.jpg",
+      "id": 6
+    },
+    {
+      "name": "Teddy Bear",
+      "category": "toys",
+      "description": "Brown teddy bear for dogs and cats",
+      "price": "35",
+      "img": "https://cdn.pixabay.com/photo/2018/08/11/22/53/teddy-bear-3599680_960_720.jpg",
+      "id": 7
+    },
+    {
+      "name": "Nail clippers",
+      "category": "other",
+      "description": "Nail clippers for dogs",
+      "price": "15",
+      "img": "https://cdn.pixabay.com/photo/2013/04/22/01/26/nail-clippers-106381_960_720.jpg",
+      "id": 8
     }
   ]
 }

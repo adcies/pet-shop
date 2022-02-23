@@ -1,9 +1,42 @@
 .product {
   width: 350px;
-  margin: 20px 0;
+  margin: 20px 20px;
+  padding-top: 20px;
+  box-shadow: 0 0 10px 0 black;
+  text-align: center;
   &__img {
     height: 300px;
     background-size: cover;
     background-position: center;
+  }
+  &__name {
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 6px;
+  }
+  &__description {
+    padding: 5px 0;
+    font-size: 1.6rem;
+    font-style: italic;
+  }
+  &__price {
+    padding: 10px;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  &__buy {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid black;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  &__buy-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
   }
 }
