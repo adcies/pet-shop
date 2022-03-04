@@ -7,8 +7,13 @@ import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 import MainNav from '../../components/MainNav/MainNav';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { userLogout } from '../../actions/userActions';
 
 function Header() {
+  const dispatch = useDispatch();
+  const { user } = useSelector(state => state.user);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isMediumDevice = useMediaQuery({ query: '(min-width: 1024px)' });
@@ -26,6 +31,12 @@ function Header() {
       document.body.removeEventListener('click', handleCloseNav);
     };
   }, []);
+
+  const handleLogin = () => {
+    if (user) {
+      dispatch(userLogout());
+    }
+  };
 
   const handleMenuToggle = () => {
     setIsMenuOpen(prevValue => !prevValue);
@@ -51,8 +62,12 @@ function Header() {
 
           <div className='header__login header__panel-element'>
             <div className='header__login-btn-container'>
-              <Link className='header__login-btn' to='/auth'>
-                Log In
+              <Link
+                className='header__login-btn'
+                to='/auth'
+                onClick={handleLogin}
+              >
+                {user ? 'Log Out' : 'Log In'}
               </Link>
             </div>
           </div>

@@ -3,6 +3,7 @@ import {
   USER_LOGIN,
   USER_LOGIN_FAIL,
   USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
 } from './types';
 
 const baseURL = 'http://localhost:5000';
@@ -35,6 +36,12 @@ export const userLogin = (username, password) => async dispatch => {
       payload: err.message,
     });
   }
+};
+
+export const userLogout = () => {
+  return {
+    type: USER_LOGOUT,
+  };
 };
 
 export const setErrors = message => {

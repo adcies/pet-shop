@@ -27,7 +27,7 @@ const MainNav = ({ isMenuOpen }) => {
           </Link>
         </li>
         <li className='nav__element'>
-          <Link className='nav__link' to='/auth'>
+          <Link className='nav__link' to='/myaccount'>
             My Account
           </Link>
         </li>

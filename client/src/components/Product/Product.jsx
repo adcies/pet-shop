@@ -14,7 +14,7 @@ const Product = ({ product }) => {
       <p className='product__description'>{description}</p>
       <p className='product__price'> Price: {price} zł</p>
       <div className='product__buy'>
-        <Link className='product__buy-btn' to='/auth'>
+        <Link className='product__buy-btn' to='/buynow'>
           Buy now
         </Link>
       </div>

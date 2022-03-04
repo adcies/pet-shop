@@ -1,9 +1,14 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import CategoryPage from '../../pages/CategoryPage/CategoryPage';
 import LoginPage from '../../pages/LoginPage/LoginPage';
+import MyAccountPage from '../../pages/MyAccountPage/MyAccountPage';
+import { useSelector } from 'react-redux';
+import BuyNow from '../../components/BuyNow/BuyNow';
 
 const Main = ({ items, loading }) => {
+  const { user } = useSelector(state => state.user);
+
   return (
     <main className='main'>
       <Routes>
@@ -61,6 +66,14 @@ const Main = ({ items, loading }) => {
               isLoading={loading}
             />
           }
+        />
+        <Route
+          path='/myaccount'
+          element={user ? <MyAccountPage /> : <Navigate to='/auth' replace />}
+        />
+        <Route
+          path='/buynow'
+          element={user ? <BuyNow /> : <Navigate to='/auth' replace />}
         />
       </Routes>
     </main>
