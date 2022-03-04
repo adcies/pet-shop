@@ -2,7 +2,7 @@ import './Product.scss';
 import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-  const { name, description, price, img } = product;
+  const { name, description, price, img, id } = product;
 
   const imageStyle = {
     backgroundImage: `url(${img})`,
@@ -14,7 +14,7 @@ const Product = ({ product }) => {
       <p className='product__description'>{description}</p>
       <p className='product__price'> Price: {price} zł</p>
       <div className='product__buy'>
-        <Link className='product__buy-btn' to='/buynow'>
+        <Link className='product__buy-btn' to={'/buynow/' + id}>
           Buy now
         </Link>
       </div>

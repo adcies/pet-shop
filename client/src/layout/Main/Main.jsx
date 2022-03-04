@@ -5,6 +5,7 @@ import LoginPage from '../../pages/LoginPage/LoginPage';
 import MyAccountPage from '../../pages/MyAccountPage/MyAccountPage';
 import { useSelector } from 'react-redux';
 import BuyNow from '../../components/BuyNow/BuyNow';
+import NotFound from '../../components/NotFound/NotFound';
 
 const Main = ({ items, loading }) => {
   const { user } = useSelector(state => state.user);
@@ -72,9 +73,10 @@ const Main = ({ items, loading }) => {
           element={user ? <MyAccountPage /> : <Navigate to='/auth' replace />}
         />
         <Route
-          path='/buynow'
+          path='/buynow/:id'
           element={user ? <BuyNow /> : <Navigate to='/auth' replace />}
         />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </main>
   );
