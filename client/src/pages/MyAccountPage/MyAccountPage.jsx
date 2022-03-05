@@ -1,5 +1,6 @@
 import './MyAccountPage.scss';
 import { useSelector } from 'react-redux';
+import Products from '../../components/Products/Products';
 
 const MyAccountPage = () => {
   const {
@@ -11,15 +12,11 @@ const MyAccountPage = () => {
       <p className='my-account__hello'>Hello, {login}</p>
       <p className='my-account__wallet'>
         Your wallet:
-        <span className='my-account__wallet-money'>{wallet}</span>
+        <span className='my-account__wallet-money'>{wallet}</span> zł
       </p>
       <div className='purchased-products'>
         Purchased products:
-        {purchasedProducts.map(product => (
-          <div key={product.id} className='purchased-product__item'>
-            <p className='purchased-product__name'>{product.name}</p>
-          </div>
-        ))}
+        {<Products products={purchasedProducts} />}
       </div>
     </section>
   );

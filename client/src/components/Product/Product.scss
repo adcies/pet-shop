@@ -4,10 +4,16 @@
   padding-top: 20px;
   box-shadow: 0 0 10px 0 black;
   text-align: center;
+  &--myaccount {
+    width: 250px;
+  }
   &__img {
-    height: 300px;
+    height: 250px;
     background-size: cover;
     background-position: center;
+    &--myaccount {
+      height: 200px;
+    }
   }
   &__name {
     font-weight: bold;
@@ -38,5 +44,10 @@
     padding: 5px 10px;
     text-decoration: none;
     color: black;
+  }
+  &__amount {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 }
