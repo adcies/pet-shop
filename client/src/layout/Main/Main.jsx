@@ -5,7 +5,7 @@ import LoginPage from '../../pages/LoginPage/LoginPage';
 import MyAccountPage from '../../pages/MyAccountPage/MyAccountPage';
 import { useSelector } from 'react-redux';
 import BuyNow from '../../components/BuyNow/BuyNow';
-import NotFound from '../../components/NotFound/NotFound';
+import NotFound from '../../pages/NotFound/NotFound';
 
 const Main = ({ items, loading }) => {
   const { user } = useSelector(state => state.user);
