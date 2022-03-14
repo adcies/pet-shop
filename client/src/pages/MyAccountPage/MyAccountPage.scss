@@ -1,5 +1,7 @@
 .my-account {
   text-align: center;
+  position: relative;
+  // z-index: -10;
   &__hello {
     font-size: 3rem;
     margin: 20px 0 40px;

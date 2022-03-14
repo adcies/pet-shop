@@ -20,8 +20,11 @@ function Header() {
 
   const handleCloseNav = e => {
     const isMenuToggleBtn =
-      e.target.parentElement.className === 'header__nav-toggle' ||
-      e.target.parentElement.parentElement.className === 'header__nav-toggle';
+      e.target.className !== 'modal__close'
+        ? e.target.parentElement.className === 'header__nav-toggle' ||
+          e.target.parentElement.parentElement.className ===
+            'header__nav-toggle'
+        : false;
     if (!isMenuToggleBtn) setIsMenuOpen(false);
   };
 
